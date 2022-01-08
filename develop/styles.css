@@ -29,7 +29,7 @@ textarea {
   text-align: center;
   border-radius: 15px;
 }
-
+/* Adjustments to the input field for the time-block. */
 input {
   border-top-style: hidden;
   border-right-style: hidden;
