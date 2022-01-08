@@ -26,18 +26,21 @@ var input3Pm = document.getElementById("3PMText");
 var input4Pm = document.getElementById("4PMText");
 var input5Pm = document.getElementById("5PMText");
 
-function renderLastItem() {
-    var godDammit = localStorage.getItem("9AMText");
-    input9Am.textContent = godDammit;
-};
+
 
 submit9Am.addEventListener("click", function(event) {
     event.preventDefault();
     var value9Am = input9Am.value;
-    localStorage.setItem("9AMText", value9Am);
+    localStorage.setItem("9AMText", JSON.stringify(value9Am));
     console.log(value9Am);
     renderLastItem()
 });
+
+function renderLastItem() {
+    var TestTest = JSON.parse(localStorage.getItem("9AMText"));
+    input9Am.textContent = TestTest;
+};
+
 
 // function timeTracker() {
 //     //get current number of hours.
