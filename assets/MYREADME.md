@@ -6,7 +6,7 @@ This project focuses on the use of Bootstrap and JQuery to build an application 
 This project also utilizes the moment().js tool to provide the accurate date in the jumbotron header. The use of moment().js is built within the task-list input area to correspond with the past, current, and future time. Previous time slots reflect a #d3d3d3 color, present time slots reflect a #ff6961 color, and future events present a #77dd77 color. An if else statement will need to be utilized for this, but I am still needing to get this to work. Otherwise, this project is functioning as expected.
 
 # Images
-![Landing page with tasks in TextArea upon page load](workDayScheduler/assets/fullPage.JPG)
+![Landing page with tasks in TextArea upon page load](/workDayScheduler/assets/fullPage.JPG)
 
 ![Items stored in localStorage](/workDayScheduler/assets/inspectApplicationWindow.JPG)
 # Credits
