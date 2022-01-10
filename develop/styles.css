@@ -15,10 +15,10 @@ textarea {
 /* Assigned */
 .jumbotron {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: #eab676;
+  color: #5f1a1d;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid #1386b5;
 }
 
 .description {
