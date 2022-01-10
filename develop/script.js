@@ -7,6 +7,8 @@ var timeNow = moment().format('HH');
 var saveBtn = $('.saveBtn');
 var taskList = $('.task-list')
 
+var rootEl = $('#root');
+
 //Input fields for time-block
 var input9Am = document.getElementById("9AMText");
 var input10Am = document.getElementById("10AMText");
@@ -133,18 +135,12 @@ retrieve3pm();
 retrieve4pm();
 retrieve5pm();
 
+//Does not work...yet. Come back to this you dummy!!!
 //Changes the color of the time-blocks depending on the time of the day based on moment.js
 function updateThisShizYo() {
     for (let i = 0; i < 9; i++) {
-        var timeYo = taskList.children().ea(i).children().eq(3).data('time') + 9;
-        console.log(timeYo);
-        if (time < timeNow) {
-            taskList.children().eq(i).children().eq(1).addClass('past');
-        } else if (time == timeNow) {
-            taskList.children().eq(i).children().eq(1).addClass('present');
-        } else {
-            taskList.children().eq(i).children().eq(1).addClass('future');
-        }
+        var time = taskList.children(i);
+        console.log(time);
         
     }
 };
@@ -158,47 +154,5 @@ updateThisShizYo();
 //     renderLastItem()
 // });
 
-// function renderLastItem() {
-//     var TestTest = JSON.parse(localStorage.getItem("9AMText"));
-//     input9Am.textContent = TestTest;
-// };
-//------------------------------------------------------
-// function timeTracker() {
-//     //get current number of hours.
-//     var timeNow = moment().hour();
-
-//     // loop over time blocks
-//     $(".time-block").each(function () {
-//         var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-
-//         // To check the time and add the classes for background indicators
-//         if (blockTime < timeNow) {
-//             $(this).removeClass("future");
-//             $(this).removeClass("present");
-//             $(this).addClass("past");
-//         }
-//         else if (blockTime === timeNow) {
-//             $(this).removeClass("past");
-//             $(this).removeClass("future");
-//             $(this).addClass("present");
-//         }
-//         else {
-//             $(this).removeClass("present");
-//             $(this).removeClass("past");
-//             $(this).addClass("future");
-
-//         }
-//     })
-// }
-// timeTracker();
-
-
-
-
 
 //Timeblocks need to change color based on past, current, and future. Grey for past, red for current, green for future.
-
-
-//Functions needed
-    //Save input/text value for timeblocks(Stored in localStorage?)
-    //When page refreshes, the saved events persist and don't reset
