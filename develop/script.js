@@ -5,8 +5,8 @@ var currentDay = moment();
 $("#currentDay").text(currentDay.format("MMM Do YYYY"));
 var timeNow = moment().format('HH');
 var saveBtn = $('.saveBtn');
-var taskList = $('.task-list')
-
+var taskList = $('.task-list');
+var textArea = $("textarea");
 var rootEl = $('#root');
 
 //Input fields for time-block
@@ -30,6 +30,19 @@ var submit2Pm = document.getElementById("submit2PM");
 var submit3Pm = document.getElementById("submit3PM");
 var submit4Pm = document.getElementById("submit4PM");
 var submit5Pm = document.getElementById("submit5PM");
+
+//This variable is for the time-block color changing effect that can be found on 151 below.
+var time = {
+    "9AMText" : 9,
+    "10AMText" : 10,
+    "11AMText" : 11,
+    "12PMText" : 12,
+    "1PMText" : 13,
+    "2PMText" : 14,
+    "3PMText" : 15,
+    "4PMText" : 16,
+    "5PMText" : 17,
+}
 
 //9AM set and get
 function save9am() {
@@ -135,24 +148,14 @@ retrieve3pm();
 retrieve4pm();
 retrieve5pm();
 
-//Does not work...yet. Come back to this you dummy!!!
-//Changes the color of the time-blocks depending on the time of the day based on moment.js
-function updateThisShizYo() {
-    for (let i = 0; i < 9; i++) {
-        var time = taskList.children(i);
-        console.log(time);
-        
+//If, else if statement to change the block of time based on the timeNOW variable.
+$.each(textArea, function(){
+    var textAreaId = $(this).attr("id");
+    if(time[textAreaId] < timeNow) {
+        $(this).addClass("past");
+    } else if( time[textAreaId] == timeNow) {
+        $(this).addClass("present");
+    } else {
+        $(this).addClass("future");
     }
-};
-updateThisShizYo();
-/* Was not working */
-// submit9Am.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     var value9Am = input9Am.value;
-//     localStorage.setItem("9AMText", JSON.stringify(value9Am));
-//     console.log(value9Am);
-//     renderLastItem()
-// });
-
-
-//Timeblocks need to change color based on past, current, and future. Grey for past, red for current, green for future.
+});
