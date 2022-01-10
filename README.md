@@ -9,6 +9,9 @@ This project also utilizes the moment().js tool to provide the accurate date in 
 ![Landing page with tasks in TextArea upon page load](/workDayScheduler/assets/fullPage.JPG)
 
 ![Items stored in localStorage](/workDayScheduler/assets/inspectApplicationWindow.JPG)
+
+# Website Link
+1. https://andrewtranmsw.github.io/workDayScheduler/
 # Credits
 - Bootstrap Grid Layout - https://getbootstrap.com/docs/4.0/layout/grid/
 - W3 localStorage - https://www.w3schools.com/js/js_api_web_storage.asp
